@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CAMBIO: Nuevo t赤tulo enfocado en la universidad -->
+    <title>NETPAZ | Red de Fibra 車ptica Universitaria</title>
+    <link rel="stylesheet" href="estilo.css">
+    
+    <!-- Usamos el estilo base para el men迆 lateral -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="netpaz.css"> <!-- Usamos un CSS adicional si lo tienes para la secci車n hero, sino usa solo estilo.css -->
+</head>
+<body>
+    <div class="container">
+        <nav class="menu">
+            <ul>
+                <!-- Enlaces actualizados -->
+                <li><a href="index.html">Inicio</a></li> 
+                <li><a href="cobertura.html">Cobertura y Puntos Wi-Fi</a></li>
+                <li><a href="rendimiento.html">Monitoreo de Rendimiento</a></li>
+                <li><a href="historia.html">Trayectoria e Implementaci車n</a></li>
+                <li class="active"><a href="netpaz.html">Acceso a la Red (Solicitar Clave)</a></li> 
+            </ul>
+            <div class="imagen-familia">
+                <img src="familia.png" alt="S赤mbolo de la Universidad o 赤cono de Red"> 
+            </div>
+            <div class="imagen-familia">
+                <img src="argetinidad.png" alt="Logo de NETPAZ">
+            </div>
+        </nav>
+        
+        <main>
+            <!-- Contenido de la secci車n ya adaptado a la Universidad -->
+            <header class="hero-netpaz">
+                <p style="font-size: 1.3em; margin-bottom: 10px;">?Acceso Prioritario y Estable!</p>
+                <h1>Solicita tu Clave 迆nica de Acceso a NETPAZ.</h1>
+                <p>La conexi車n que la Universidad decidi車 tener. R芍pida, segura y enfocada en el estudio.</p>
+            </header>
+            
+            <section class="seccion" id="problema">
+                <h2>Conexi車n de Alta Velocidad para la Investigaci車n y el Estudio.</h2>
+                <p>Se acab車 el Wi-Fi lento. Accede a tu campus virtual, biblioteca digital y clases online sin interrupciones.</p>
+            </section>
+            
+            <section class="formulario-seccion-netpaz">
+                <h2>Generar Clave de Acceso 迆nica.</h2>
+                <p>Necesitamos validar tus datos institucionales para proporcionarte la clave de red de alta velocidad seg迆n tu rol (Alumno, Profesor, Admin).</p>
+                
+                <form class="formulario-netpaz">
+                    <label for="nombre">Nombre y Apellido:</label>
+                    <input type="text" id="nombre" name="nombre" required>
+
+                    <label for="matricula">Matr赤cula/Legajo o DNI:</label>
+                    <input type="text" id="matricula" name="matricula" required>
+                    
+                    <label for="correo">Correo Electr車nico (Institucional):</label>
+                    <input type="email" id="correo" name="correo" required>
+                    
+                    <button type="submit">Generar Clave de Acceso</button>
+                </form>
+            </section>
+            
+            <footer class="footer-netpaz">
+                <p>&copy; 2025 NETPAZ - Red Universitaria | Soporte 24/7</p>
+            </footer>
+        </main>
+    </div>
+</body>
+</html>

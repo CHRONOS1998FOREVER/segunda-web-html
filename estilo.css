@@ -1,0 +1,650 @@
+/* ------------------------------------- */
+/* ESTILOS DEL MENÚ LATERAL Y LA TIENDA (estilo.css) */
+/* ------------------------------------- */
+/* Definición de la Paleta de Colores y Tipografía (Cooperativa) */
+:root {
+    --color-principal: #2d7a3e; /* Verde Cooperativo - Confianza, Comunidad */
+    --color-secundario: #1a4d2e; /* Verde Oscuro - Seriedad, Solidez */
+    --color-acento: #f39c12; /* Naranja Cálido - Energía Comunitaria */
+    --color-fondo: #f8f9fa; /* Fondo Claro */
+    --fuente-base: 'Roboto', Arial, sans-serif;
+}
+/* Base y Reseteo */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: var(--fuente-base);
+    line-height: 1.6;
+    background-color: var(--color-fondo);
+    color: var(--color-secundario);
+}
+/* Estructura Principal del Contenedor (Menú al lado de Contenido) */
+.container {
+    display: flex; 
+    min-height: 100vh;
+    max-width: 1400px; 
+    margin: 0 auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: white;
+}
+/* -------------------- */
+/* ESTILOS DEL MENÚ (nav) */
+/* -------------------- */
+.menu {
+    width: 250px; 
+    background-color: var(--color-secundario);
+    padding: 20px 0;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+.menu ul {
+    list-style: none;
+}
+.menu li a {
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    border-left: 5px solid transparent; 
+    transition: background-color 0.3s, border-left-color 0.3s;
+}
+.menu li {
+    /* Quitamos el borde de aquí para que no sea más ancho que el enlace */
+    list-style: none; /* Asegura que no haya viñetas */
+}
+
+.menu li a {
+    display: block;
+    padding: 15px 20px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    border-left: 5px solid transparent; 
+    
+    /* AÑADIMOS EL BORDE INFERIOR AQUÍ para que tenga el mismo ancho que el fondo del hover */
+    border-bottom: 1px solid var(--color-acento); /* Aplicamos la línea divisoria */
+    
+    transition: background-color 0.3s, border-left-color 0.3s, border-bottom-color 0.3s;
+}
+
+.menu li a:hover,
+.menu li a.active {
+    background-color: var(--color-principal); 
+    border-left-color: var(--color-acento);
+    /* OPCIONAL: Puedes cambiar el color del borde inferior al hacer hover para un efecto visual */
+    /* border-bottom-color: var(--color-principal); */
+}
+
+/* 3. AÑADIMOS una regla para eliminar el borde del ÚLTIMO enlace */
+.menu li:last-child a {
+    border-bottom: none;
+}
+/* -------------------- */
+/* ESTILOS DEL CONTENIDO (main) */
+/* -------------------- */
+main {
+    flex-grow: 1; 
+    padding: 10px 40px 40px 40px;
+}
+.imagen-principal {
+    width: 900px;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto 10px auto;
+    border-radius: 8px;
+    
+    /* Efecto fade in */
+    animation: fadeIn 1.5s ease-in;
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+h1 {
+    font-size: 2.5em;
+    color: var(--color-principal);
+    margin-bottom: 10px;
+    text-align: center;
+}
+h2 {
+    font-size: 1.5em;
+    color: var(--color-secundario);
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--color-acento);
+    padding-bottom: 5px;
+	text-align: center;
+}
+h3 {
+    color: var(--color-principal);
+    font-size: 1.3em;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+h4 {
+    color: var(--color-secundario);
+    font-size: 1.1em;
+    margin-top: 25px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+.nombre-tienda {
+    color: var(--color-acento);
+    font-weight: 700;
+}
+p {
+    margin-bottom: 15px;
+    text-align: center;
+	font-weight: 700;
+	font-size: 26px;
+}
+/* Estilos para enlaces de texto */
+a {
+    color: var(--color-acento);
+    text-decoration: none;
+    font-weight: bold;
+}
+a:hover {
+    text-decoration: underline;
+    color: var(--color-principal);
+}
+/* ------------------------------------- */
+/* IMÁGENES DEL MENÚ */
+/* ------------------------------------- */
+/* Imágenes de familia (las del menú lateral) */
+.imagen-familia {
+    padding: 15px;
+    text-align: center;
+    margin-top: 30px;
+}
+.imagen-familia img {
+    width: 180px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+/* Imagen del alumno (en la sección de historia) */
+.alumno {
+    width: 350px;
+    height: auto;
+    flex-shrink: 0;
+    border-radius: 10px;
+	
+}
+
+/* Contenedor de imagen y texto - Grid 50/50 */
+.contenedor-imagen-texto {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 50% y 50% */
+    gap: 40px;
+    align-items: center;
+    margin: 50px 0;
+    padding: 20px;
+    background-color: var(--color-fondo);
+    border-radius: 12px;
+}
+
+.alumno, .docentes, .mapa-cobertura, .instalacion-tecnico {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.texto-alumno p, .texto-docentes p, .texto-mapa p, .texto-instalacion p {
+    font-size: 26px; /* Más grande, antes era 22px */
+    line-height: 1.9;
+    margin: 0;
+    text-align: left;
+    font-weight: 700; /* <--- CAMBIADO AQUÍ para más negrita */
+    color: var(--color-secundario);
+    padding: 10px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .contenedor-imagen-texto {
+        grid-template-columns: 1fr; /* Una columna en móvil */
+        gap: 20px;
+    }
+    
+    .texto-alumno p, .texto-docentes p, .texto-mapa p, .texto-instalacion p {
+        text-align: center;
+    }
+}
+/* ------------------------------------- */
+/* ESTILOS AÑADIDOS: MAPA DE COBERTURA */
+/* ------------------------------------- */
+
+/* Nuevo estilo para la imagen del Mapa (Añadir a tu CSS) */
+.mapa-cobertura {
+    width: 620px; /* Se usa el mismo ancho que el técnico para mantener consistencia */
+    height: auto;
+    flex-shrink: 0;
+    border-radius: 10px;
+}
+
+/* Nuevo estilo para el texto del Mapa (Añadir a tu CSS) */
+.texto-mapa p {
+    font-size: 20px;
+    line-height: 1.6;
+	 margin: 0;
+    text-align: left;
+    font-weight: 700;
+}
+/* Frase motivacional en el menú */
+.frase-cooperativa {
+    /* Por defecto, la frase se pega al fondo en escritorio (cuando el menú es un sidebar) */
+    position: absolute; 
+    bottom: 20px;
+    width: 210px; /* 250px - 2*20px padding */
+    margin-top: auto;
+    padding: 20px;
+    text-align: center;
+    border-top: 2px solid var(--color-acento);
+}
+}
+.frase-cooperativa p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.9em;
+    font-style: italic;
+    line-height: 1.4;
+    margin: 0;
+    font-weight: bold;
+}
+/* ------------------------------------- */
+/* GRID DE PLANES/SERVICIOS */
+/* ------------------------------------- */
+.planes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin: 40px 0;
+}
+.plan-item {
+    text-align: center;
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.plan-item:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 10px 30px rgba(45, 122, 62, 0.25);
+}
+.plan-item:hover img {
+    filter: brightness(1.1);
+}
+.plan-item img {
+    width: 100%;
+    max-width: 220px;
+    height: auto;
+    margin-bottom: 15px;
+    border-radius: 8px;
+}
+.plan-item h3 {
+    color: var(--color-principal);
+    font-size: 1.3em;
+    margin-bottom: 10px;
+    margin-top: 0;
+}
+.plan-item p {
+    text-align: center;
+    font-size: 0.9em;
+    line-height: 1.5;
+    color: #555;
+}
+
+/* Logos de servicios */
+.logo-servicios {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.logo-servicios img {
+    max-width: 400px;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* ------------------------------------- */
+/* ESTILOS PÁGINA NETPAZ (CONTACTO) */
+/* ------------------------------------- */
+/* Hero section dentro del main */
+.hero-netpaz {
+    background: linear-gradient(135deg, var(--color-principal) 0%, var(--color-secundario) 100%);
+    text-align: center;
+    padding: 40px 30px;
+    color: white;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+.hero-netpaz h1 {
+    font-size: 2.2em;
+    color: white;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+.hero-netpaz p {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    color: rgba(255, 255, 255, 0.95);
+}
+/* Sección problema */
+.seccion-netpaz {
+    padding: 30px 0;
+    text-align: center;
+}
+.seccion-netpaz h2 {
+    color: var(--color-principal);
+    font-size: 1.8em;
+    margin-bottom: 15px;
+}
+.seccion-netpaz p {
+    font-size: 1.05em;
+    line-height: 1.7;
+    color: #555;
+}
+/* Sección formulario */
+.formulario-seccion-netpaz {
+    padding: 40px 0;
+    background-color: var(--color-fondo);
+    border-radius: 10px;
+    margin: 30px 0;
+    text-align: center;
+}
+.formulario-seccion-netpaz h2 {
+    color: var(--color-principal);
+    margin-bottom: 15px;
+}
+.formulario-seccion-netpaz > p {
+    margin-bottom: 25px;
+    color: #555;
+}
+/* Formulario */
+.formulario-netpaz {
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: left;
+    padding: 30px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+.formulario-netpaz label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 700;
+    color: var(--color-secundario);
+}
+.formulario-netpaz input[type="text"],
+.formulario-netpaz input[type="tel"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+    transition: border-color 0.3s;
+}
+.formulario-netpaz input[type="text"]:focus,
+.formulario-netpaz input[type="tel"]:focus {
+    outline: none;
+    border-color: var(--color-principal);
+}
+.formulario-netpaz button {
+    width: 100%;
+    background-color: var(--color-principal);
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+.formulario-netpaz button:hover {
+    background-color: var(--color-secundario);
+    transform: translateY(-2px);
+}
+/* Footer dentro del main */
+.footer-netpaz {
+    background-color: var(--color-secundario);
+    color: white;
+    text-align: center;
+    padding: 25px 20px;
+    border-radius: 8px;
+    margin-top: 40px;
+    font-size: 0.9em;
+}
+.footer-netpaz p {
+    margin-bottom: 8px;
+    text-align: center;
+}
+.footer-netpaz a {
+    color: var(--color-acento);
+    text-decoration: none;
+    font-weight: bold;
+}
+.footer-netpaz a:hover {
+    text-decoration: underline;
+}
+/* ------------------------------------- */
+/* RESPONSIVIDAD (Móviles) */
+/* ------------------------------------- */
+@media (max-width: 1024px) {
+    .planes-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+}
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; 
+    }
+    
+    .menu {
+        width: 100%; 
+        padding: 10px 0;
+    }
+    
+    .menu ul {
+        display: flex; 
+        flex-wrap: wrap; 
+        justify-content: space-around;
+    }
+    
+    .menu li {
+        width: 48%; 
+        text-align: center;
+        margin: 5px 0;
+    }
+    
+    .menu li a {
+        border-left: none;
+        border-bottom: 3px solid transparent;
+        padding: 10px 5px;
+    }
+    
+    .menu li a:hover, 
+    .menu li a.active {
+        border-left-color: transparent;
+        border-bottom-color: var(--color-acento);
+    }
+    
+    .planes-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+    
+    .hero-netpaz {
+        padding: 30px 20px;
+    }
+    
+    .hero-netpaz h1 {
+        font-size: 1.8em;
+    }
+    
+    .formulario-netpaz {
+        padding: 20px;
+    }
+    
+    /* Responsive para contenedor imagen-texto */
+    .contenedor-imagen-texto {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .niño {
+        width: 100%;
+        max-width: 350px;
+    }
+    
+    .texto-niño p {
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .niño {
+        max-width: 280px;
+    }
+    
+    .contenedor-imagen-texto {
+        gap: 20px;
+        margin: 20px 0;
+    }
+}
+/* ------------------------------------- */
+/* ESTILOS PARA PÁGINAS DE PLANES DETALLADOS */
+/* ------------------------------------- */
+
+.plan-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.plan-detalle {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.plan-imagen-grande {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    display: block;
+    margin: 30px auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.plan-caracteristicas {
+    background-color: var(--color-fondo);
+    padding: 30px;
+    border-radius: 12px;
+    margin: 30px 0;
+}
+
+.plan-caracteristicas h3 {
+    color: var(--color-principal);
+    font-size: 1.4em;
+    margin-top: 25px;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.plan-caracteristicas p {
+    text-align: left;
+    margin-bottom: 10px;
+    font-size: 1.05em;
+    line-height: 1.8;
+}
+
+.precio-grande {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: var(--color-acento);
+    text-align: center;
+    margin: 20px 0;
+}
+
+.plan-cta {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin: 40px 0;
+    flex-wrap: wrap;
+}
+
+.boton-contratar {
+    background-color: var(--color-principal);
+    color: white;
+    padding: 18px 40px;
+    border-radius: 8px;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.2s;
+    display: inline-block;
+}
+
+.boton-contratar:hover {
+    background-color: var(--color-secundario);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(45, 122, 62, 0.3);
+}
+
+.boton-volver {
+    background-color: #6c757d;
+    color: white;
+    padding: 18px 40px;
+    border-radius: 8px;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.2s;
+    display: inline-block;
+}
+
+.boton-volver:hover {
+    background-color: #5a6268;
+    transform: translateY(-3px);
+    text-decoration: none;
+}
+
+/* Responsive para páginas de planes */
+@media (max-width: 768px) {
+    .plan-caracteristicas {
+        padding: 20px;
+    }
+    
+    .precio-grande {
+        font-size: 2em;
+    }
+    
+    .plan-cta {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .boton-contratar,
+    .boton-volver {
+        width: 100%;
+        max-width: 300px;
+        text-align: center;
+    }
+}
